@@ -307,6 +307,9 @@ a {
   font-size: var(--main-font-size);
   line-height: 21px;
   color: var(--main-text-color);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .question-link::before {
@@ -328,19 +331,6 @@ a {
   background-repeat: no-repeat;
   background-size: 870px 834px, 350px 430px;
   background-position: calc(50% - 485px) -100px, calc(50% + 635px) 396px;
-}
-
-@media only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (min--moz-device-pixel-ratio: 2),
-only screen and (-o-min-device-pixel-ratio: 2/1),
-only screen and (min-device-pixel-ratio: 2),
-only screen and (min-resolution: 192dpi),
-only screen and (min-resolution: 2dppx) {
-
-  .hero {
-    background-image: url("../images/hero-bgi@2x.png"), url("../images/parrot@2x.png");
-  }
-
 }
 
 .hero__info {
@@ -927,6 +917,8 @@ only screen and (min-resolution: 2dppx) {
 
 .articles__item {
   width: 305px;
+  background-color: var(--main-white-color);
+  border-radius: 5px;
 }
 
 .articles__item:not(:last-child) {
@@ -938,26 +930,26 @@ only screen and (min-resolution: 2dppx) {
   display: flex;
 }
 
-.articles__item:hover{
+.articles__item:hover {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, .25));
 }
 
-.articles__item:hover .articles__link{
+/* .articles__item:hover .articles__link {
   color: var(--main-link-hover-color);
 }
 
-.articles__item:hover .articles__link{
+.articles__item:hover .articles__link {
   color: var(--main-text-color);
   opacity: 0.7;
-}
+} */
 
-.articles__item:active{
+.articles__item:active {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .articles__item--active .articles__item-img-box {
   width: 305px;
-  height: 435px;
+  height: 436px;
 }
 
 .articles__item--active .articles__item-box {
@@ -1008,7 +1000,7 @@ only screen and (min-resolution: 2dppx) {
 }
 
 .articles__item-box {
-  padding: 21px 22px 36px 30px;
+  padding: 21px 22px 39px 30px;
   border: 1px solid #E4E4E2;
   border-radius: 0 0 5px 5px;
   border-top: none;
@@ -1081,6 +1073,7 @@ only screen and (min-resolution: 2dppx) {
   font-size: var(--main-font-size);
   line-height: 21px;
   color: var(--main-text-color);
+  transition: all 0.3s ease;
 }
 
 .articles__link::before {
@@ -1093,6 +1086,17 @@ only screen and (min-resolution: 2dppx) {
   content: "";
   background-image: url("../images/pet.svg");
   background-size: cover;
+}
+
+.articles__link:hover {
+  color: var(--main-link-hover-color);
+  transition: all 0.3s ease;
+}
+
+.articles__link:active {
+  color: var(--main-text-color);
+  opacity: 0.6;
+  transition: all 0.3s ease;
 }
 
 /* FEEDBACK SECTION START */
@@ -1272,7 +1276,7 @@ only screen and (min-resolution: 2dppx) {
   margin: 0;
 }
 
-.inner__tel::before{
+.inner__tel::before {
   position: absolute;
   top: 0%;
   left: -25px;
@@ -1291,31 +1295,451 @@ only screen and (min-resolution: 2dppx) {
   color: #333333;
 }
 
-.inner__tel-link:hover{
+.inner__tel-link:not(:last-child) {
+  margin-bottom: 4px;
+}
+
+.inner__tel-link:hover {
   color: var(--main-link-hover-color);
 }
 
-.inner__tel-link:active{
+.inner__tel-link:active {
+  color: var(--main-text-color);
   opacity: 0.6;
 }
 
-.site-footer__span{
+.site-footer__span {
   display: flex;
   justify-content: flex-end;
 }
 
-.inner__span-box{
+.inner__span-box {
   display: block;
 }
 
-.inner__addres-link{
+.inner__addres-link {
   position: relative;
 }
 
-.inner__addres-link::before{
+.inner__addres-link::before {
   position: absolute;
   top: 0;
   left: -20px;
   width: 16px;
   height: 16px;
 }
+
+
+/* SERVICES PAGE START */
+
+.services-hero {
+  padding-top: 118px;
+  padding-bottom: 169px;
+  background-image: url("../images/services-perrot.png");
+  background-repeat: no-repeat;
+  background-size: 435px 435px;
+  background-position: calc(50% + 485px) -26px;
+}
+
+.services-hero__info {
+  width: 447px;
+  margin-left: 110px;
+  margin-bottom: 140px;
+}
+
+.services-hero__title {
+  margin: 0;
+  margin-bottom: 21px;
+  font-weight: var(--font-weight-bold);
+  font-size: 70px;
+  line-height: 64px;
+  color: var(--main-text-color);
+}
+
+.services-hero__text {
+  margin: 0;
+  font-weight: var(--font-weight-regular);
+  font-size: var(--main-font-size);
+  line-height: 20px;
+  color: #949494;
+}
+
+.services-hero__list {
+  display: grid;
+  grid-template: repeat(3, auto) / repeat(4, 305px);
+  row-gap: 34px;
+  column-gap: 30px;
+}
+
+.services-hero__item {
+  padding: 58px 22px 45px 53px;
+  background-color: #fff;
+  background-image: url("../images/services-pet.svg");
+  background-repeat: no-repeat;
+  background-size: 128px 114px;
+  background-position: top right;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.services-hero__item:hover {
+  filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.2));
+}
+
+.services-hero__item:active {
+  filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.3));
+}
+
+.services-hero__item::before {
+  display: block;
+  width: 54px;
+  height: 77px;
+  margin-bottom: 21px;
+  content: "";
+  background-image: url("../images/doctor.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.services-hero__item:nth-child(2)::before {
+  width: 61px;
+  margin-bottom: 22px;
+  background-image: url("../images/withdog.svg");
+}
+
+.services-hero__item:nth-child(3)::before {
+  width: 72px;
+  background-image: url("../images/xirrurg.svg");
+}
+
+.services-hero__item:nth-child(4)::before {
+  width: 76px;
+  height: 76px;
+  background-image: url("../images/dermotology.svg");
+}
+
+.services-hero__item:nth-child(5)::before {
+  width: 78px;
+  height: 78px;
+  background-image: url("../images/laborotory.svg");
+}
+
+.services-hero__item:nth-child(6)::before {
+  width: 76px;
+  height: 76px;
+  margin-bottom: 23px;
+  background-image: url("../images/oftalmology.svg");
+}
+
+.services-hero__item:nth-child(7)::before {
+  width: 77px;
+  background-image: url("../images/uzi.svg");
+}
+
+.services-hero__item:nth-child(8)::before {
+  width: 40px;
+  margin-bottom: 22px;
+  background-image: url("../images/mouse.svg");
+}
+
+.services-hero__item:nth-child(9)::before {
+  width: 87px;
+  height: 78px;
+  background-image: url("../images/passport.svg");
+}
+
+.services-hero__item:nth-child(10)::before {
+  width: 68px;
+  height: 76px;
+  margin-bottom: 22px;
+  background-image: url("../images/vacsine.svg");
+}
+
+.services-hero__item:nth-child(5)::before {
+  width: 78px;
+  height: 78px;
+  background-image: url("../images/stomotology.svg");
+}
+
+.services-hero__item:nth-child(12)::before {
+  width: 77px;
+  margin-bottom: 22px;
+  background-image: url("../images/call.svg");
+}
+
+.services-hero__heading {
+  margin: 0;
+  margin-bottom: 14px;
+  font-size: 31px;
+  line-height: 34px;
+  color: var(--main-text-color);
+}
+
+.services-hero__desc {
+  margin: 0;
+  margin-bottom: 26px;
+  font-weight: var(--font-weight-regular);
+  font-size: var(--main-font-size);
+  line-height: 20px;
+  color: #949494;
+}
+
+.services-hero__link {
+  display: inline-block;
+  padding: 15px 29px 14px 30px;
+  font-weight: var(--font-weight-regular);
+  font-size: var(--main-font-size);
+  line-height: 21px;
+  color: var(--main-white-color);
+  border-radius: 3px;
+}
+
+.services-hero__item:nth-child(even) .services-hero__link {
+  background-color: #78C0DE;
+}
+
+.services-hero__item:nth-child(odd) .services-hero__link {
+  background-color: var(--main-link-hover-color);
+}
+
+.services-hero__item:nth-child(odd) .services-hero__link:hover {
+  color: var(--main-link-hover-color);
+  background-color: var(--main-text-color);
+}
+
+.services-hero__item:nth-child(odd) .services-hero__link:active {
+  opacity: 0.6;
+}
+
+
+/* CODE TO RETINA BACKGROUND IMAGES */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
+
+  .hero {
+    background-image: url("../images/hero-bgi@2x.png"), url("../images/parrot@2x.png");
+  }
+
+  .articles__item:nth-child(1) .articles__item-img-box {
+    background-image: url("../images/cat-smile@2x.png");
+  }
+
+  .articles__item:nth-child(2) .articles__item-img-box {
+    background-image: url("../images/dogandcat@2x.png");
+  }
+
+  .articles__item:nth-child(3) .articles__item-img-box {
+    background-image: url("../images/pitomtsadog@2x.png");
+  }
+
+  .feedback__info::after {
+    background-image: url("../images/fish@2x.png");
+  }
+
+  .subscribe__info-box::after {
+    background-image: url("../images/dog@2x.png");
+  }
+
+  .services-hero {
+    background-image: url("../images/services-perrot@2x.png");
+  }
+
+}
+
+/* CODE TO RETINA BACKGROUND IMAGES */
+
+/* CUSTOM STYLES FOR MODAL WINDOW */
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffffe6;
+}
+
+.modal--show {
+  display: block;
+}
+
+.modal__window {
+  position: relative;
+  z-index: 20;
+  width: 850px;
+  margin: 15px auto 0 auto;
+  padding: 119px 51px 137px 70px;
+  background-color: var(--main-link-hover-color);
+  background-image: url("../images/modal-bgi.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation-name: slidedown;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+@keyframes slidedown {
+  from {
+    transform: translateY(-2000px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.modal__btn {
+  position: absolute;
+  top: 21px;
+  left: 20px;
+  z-index: 30;
+  width: 18px;
+  height: 18px;
+  background-image: url("../images/plus-btn.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.modal__inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal__inner::after {
+  position: absolute;
+  bottom: 0;
+  left: 25px;
+  width: 350px;
+  height: 324px;
+  content: "";
+  background-image: url("../images/modal-dog.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.modal__start {
+  margin-top: 30px;
+}
+
+.modal__span {
+  display: block;
+  margin-bottom: 21px;
+  font-size: 20px;
+  line-height: 30px;
+  color: var(--main-text-color);
+}
+
+.modal__link {
+  display: flex;
+  padding: 14px 36px 15px 35px;
+  font-size: var(--main-font-size);
+  line-height: 21px;
+  color: var(--main-text-color);
+  background-color: var(--main-white-color);
+}
+
+.modal__link::before {
+  width: 20px;
+  height: 20px;
+  margin-right: 13px;
+  content: "";
+  background-image: url("../images/google-icon.svg");
+  background-size: contain;
+}
+
+.modal__link--facebook {
+  margin-top: 21px;
+  padding-right: 35px;
+  padding-left: 22px;
+}
+
+.modal__link--facebook::before {
+  margin-right: 14px;
+  background-image: url("../images/facebook-icon.svg");
+}
+
+.modal__title {
+  margin: 0;
+  margin-bottom: 25px;
+  font-weight: var(--font-weight-bold);
+  font-size: 50px;
+  line-height: 54px;
+  color: var(--main-text-color);
+  text-align: right;
+}
+
+.modal__name {
+  display: block;
+  width: 335px;
+  margin-bottom: 21px;
+  padding: 14px 0 11px 20px;
+  background-color: var(--main-white-color);
+  border: 2px solid transparent;
+  outline: none;
+}
+
+.modal__name:focus {
+  border-color: var(--main-link-hover-color);
+}
+
+.modal__name:not(:placeholder-shown):not(:focus):valid {
+  border-color: var(--main-link-hover-color);
+}
+
+.modal__name:not(:placeholder-shown):not(:focus):invalid {
+  color: #DC4D41;
+  border-color: #DC4D41;
+}
+
+.modal__name::placeholder {
+  font-weight: var(--font-weight-regular);
+  font-size: var(--main-font-size);
+  line-height: 21px;
+  color: #949494
+}
+
+.modal__messege {
+  width: 335px;
+  height: 165px;
+  margin-bottom: 27px;
+  padding: 15px 0 0 20px;
+  outline: none;
+  border: none;
+  resize: none;
+  border: 2px solid transparent;
+}
+
+.modal__messege:focus {
+  border-color: var(--main-link-hover-color);
+}
+
+.modal__messege::placeholder {
+  font-weight: var(--font-weight-regular);
+  font-size: var(--main-font-size);
+  line-height: 21px;
+  color: #949494;
+}
+
+.modal__submit-btn {
+  display: block;
+  padding: 14px 67px 15px 55px;
+  font-size: var(--main-font-size);
+  line-height: 21px;
+  color: var(--main-white-color);
+  background-color: #000;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+/* CUSTOM STYLES FOR MODAL WINDOW */
