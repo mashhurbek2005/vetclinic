@@ -1762,7 +1762,7 @@ only screen and (min-resolution: 2dppx) {
   background-image: url("../images/faq-cat.png"), url("../images/faq-parrot.png");
   background-size: 569px 466px, 654px 652px;
   background-repeat: no-repeat;
-  background-position: calc(50% + 505px) 59px, calc(50% + 505px) 851px;
+  background-position: calc(50% + 505px) 59px, calc(50% + 505px) 1042px;
 }
 
 .faq-hero__inner {
